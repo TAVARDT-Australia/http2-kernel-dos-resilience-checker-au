@@ -1,47 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en-AU">
 <head>
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5KNBXRZP');</script>
-  
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub | TAVARDT Australia</title>
-  <meta name="description" content="Corporate technical defensive specification for mitigating HTTP/2 Rapid Reset (CVE-2023-44487), NoisyTCP saturation, Linux kernel sysctl hardening, hardened NGINX blueprints, and deterministic CLI auditing tools.">
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
-  <link rel="shortcut icon" href="./favicon.ico">
-  <link rel="canonical" href="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/">
-  <link rel="alternate" hreflang="en-AU" href="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/">
-  <link rel="alternate" hreflang="x-default" href="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="TAVARDT Australia">
-  <meta property="og:title" content="HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub | TAVARDT">
-  <meta property="og:description" content="Corporate defensive specifications and hardening blueprints for Linux kernel, NGINX, and firewall against HTTP/2 DoS vulnerabilities.">
-  <meta property="og:url" content="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/">
-  <meta property="og:image" content="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="TAVARDT Australia">
-  <meta property="og:locale" content="pt_BR">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@tavardt">
-  <meta name="twitter:title" content="HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub | TAVARDT Australia">
-  <meta name="twitter:description" content="Mitigation of HTTP/2 Rapid Reset and NoisyTCP saturation with infrastructure blueprints and deterministic CLI.">
-  <meta name="twitter:image" content="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/og-image.jpg">
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub | TAVARDT Australia</title>
+<meta content="Corporate technical defensive specification for mitigating HTTP/2 Rapid Reset (CVE-2023-44487), NoisyTCP saturation, Linux kernel sysctl hardening, hardened NGINX blueprints, and deterministic CLI auditing tools." name="description"/>
+<link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="./favicon.ico" rel="shortcut icon"/>
+<link href="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/" rel="canonical"/>
+<link href="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/" hreflang="en-AU" rel="alternate"/>
+<link href="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/" hreflang="x-default" rel="alternate"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="TAVARDT Australia" property="og:site_name"/>
+<meta content="HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub | TAVARDT" property="og:title"/>
+<meta content="Corporate defensive specifications and hardening blueprints for Linux kernel, NGINX, and firewall against HTTP/2 DoS vulnerabilities." property="og:description"/>
+<meta content="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/" property="og:url"/>
+<meta content="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/og-image.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="TAVARDT Australia" property="og:image:alt"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@tavardt" name="twitter:site"/>
+<meta content="HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub | TAVARDT Australia" name="twitter:title"/>
+<meta content="Mitigation of HTTP/2 Rapid Reset and NoisyTCP saturation with infrastructure blueprints and deterministic CLI." name="twitter:description"/>
+<meta content="https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/og-image.jpg" name="twitter:image"/>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -155,8 +148,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -1002,206 +994,189 @@
   </style>
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KNBXRZP"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-  <header class="tavardt-header">
-    <div class="tavardt-header-inner">
-      <a class="tavardt-brand" href="https://ag.tavardt.com/au/" rel="noopener" target="_blank">
-        <span class="tavardt-logo-text">TAVARDT<span class="tavardt-brand-dot">.</span></span>
-      </a>
-      <nav class="tavardt-nav">
-        <a class="tavardt-nav-link" href="https://ag.tavardt.com/au/" rel="noopener" target="_blank">Portal</a>
-        <a class="tavardt-nav-link" href="https://tools.tavardt.com/au/" rel="noopener" target="_blank">Tools</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="tavardt-main">
-    <section class="hero-section">
-      <h1 class="hero-title">HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub</h1>
-      <p class="hero-subtitle">Enterprise defensive specification for Rapid Reset (CVE-2023-44487) mitigation, NoisyTCP saturation controls, Linux kernel sysctl directives, hardened NGINX reverse proxy configs, and deterministic CLI tooling.</p>
-    </section>
-
-    <div class="cli-card">
-      <div class="cli-header">
-        <span class="cli-title">Local CLI Terminal Testing</span>
-        <button class="btn-copy-cli" id="btn-copy-cli" onclick="copyCliCommand()" type="button" aria-label="Copy Command">
-          <span class="btn-copy-cli-text">Copy</span>
-          <span class="btn-copy-cli-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></span>
-        </button>
-      </div>
-      <div class="cli-body">
-        <p class="cli-desc">To inspect Linux kernel network parameters (/proc/sys/net/ipv4) and HTTP/2 stack behavior directly on the server host, execute the official Python script:</p>
-        <div class="cli-code-terminal" id="cli-terminal-code"><span class="cli-comment"># 1. Download audit script from official repository</span>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5KNBXRZP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<header class="tavardt-header">
+<div class="tavardt-header-inner">
+<a class="tavardt-brand" href="https://ag.tavardt.com/au/" rel="noopener" target="_blank">
+<span class="tavardt-logo-text">TAVARDT</span>
+</a>
+<nav class="tavardt-nav">
+<a class="tavardt-nav-link" href="https://ag.tavardt.com/au/" rel="noopener" target="_blank">Portal</a>
+<a class="tavardt-nav-link" href="https://tools.tavardt.com/au/" rel="noopener" target="_blank">Tools</a>
+</nav>
+</div>
+</header>
+<main class="tavardt-main">
+<section class="hero-section">
+<h1 class="hero-title">HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub</h1>
+<p class="hero-subtitle">Enterprise defensive specification for Rapid Reset (CVE-2023-44487) mitigation, NoisyTCP saturation controls, Linux kernel sysctl directives, hardened NGINX reverse proxy configs, and deterministic CLI tooling.</p>
+</section>
+<div class="cli-card">
+<div class="cli-header">
+<span class="cli-title">Local CLI Terminal Testing</span>
+<button aria-label="Copy Command" class="btn-copy-cli" id="btn-copy-cli" onclick="copyCliCommand()" type="button">
+<span class="btn-copy-cli-text">Copy</span>
+<span aria-hidden="true" class="btn-copy-cli-icon"><svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></span>
+</button>
+</div>
+<div class="cli-body">
+<p class="cli-desc">To inspect Linux kernel network parameters (/proc/sys/net/ipv4) and HTTP/2 stack behavior directly on the server host, execute the official Python script:</p>
+<div class="cli-code-terminal" id="cli-terminal-code"><span class="cli-comment"># 1. Download audit script from official repository</span>
 curl -sO https://raw.githubusercontent.com/TAVARDT-Australia/http2-kernel-dos-resilience-checker-au/main/http2_kernel_dos_checker.py
 
 <span class="cli-comment"># 2. Execute deterministic network parameter audit on host</span>
 python http2_kernel_dos_checker.py</div>
-        <div class="cli-features">
-          <div class="cli-feature-tag"><strong>Deterministic Inspection</strong>Direct /proc/sys read and RFC baselines</div>
-          <div class="cli-feature-tag"><strong>Zero Trust Protection</strong>Zero telemetry or external network calls</div>
-          <div class="cli-feature-tag"><strong>Zero Simulation</strong>Production-tested system directives</div>
-        </div>
-      </div>
-    </div>
-
-    <section class="matrix-section">
-      <h2 class="section-title">Architectural Diagnostics: Standard Server vs. Hardened Infrastructure</h2>
-      <p class="section-subtitle">Select an architectural posture to inspect resource exhaustion vectors or mitigation controls:</p>
-
-      <div class="matrix-tabs">
-        <button class="matrix-tab-btn active vuln" id="tab-scenario-vuln" onclick="switchScenario('vuln')" type="button">1. Standard Server (Vulnerable)</button>
-        <button class="matrix-tab-btn hard" id="tab-scenario-hard" onclick="switchScenario('hard')" type="button">2. Hardened Server (TAVARDT Zero Trust Baseline)</button>
-      </div>
-
-      <div class="posture-display-card">
-        <div class="posture-status-row">
-          <span class="posture-badge badge-vuln" id="posture-badge">STANDARD POSTURE: VULNERABLE TO RAPID RESET &amp; RESOURCE EXHAUSTION</span>
-          <span class="posture-mode-tag" id="posture-mode-tag">Default Linux Kernel &amp; Reverse Proxy Configuration</span>
-        </div>
-        <p class="posture-summary" id="posture-summary">Default web server and Linux kernel configurations accept hundreds of concurrent streams without RST frame rate limits, maintain shallow TCP backlogs, and lack SYN cookies, quickly succumbing to HTTP/2 Rapid Reset and NoisyTCP exhaustion.</p>
-
-        <div class="routes-box">
-          <div class="routes-header">
-            <span>HTTP/2 &amp; TCP Exhaustion Vectors Mapping</span>
-          </div>
-          <table class="routes-table">
-            <thead>
-              <tr>
-                <th>ATTACK VECTOR / SURFACE</th>
-                <th>OBSERVED CONFIGURATION</th>
-                <th>COMPORTAMENTO DO PIPELINE</th>
-                <th>SECURITY POSTURE</th>
-              </tr>
-            </thead>
-            <tbody id="routes-tbody">
-            </tbody>
-          </table>
-        </div>
-
-        <div class="findings-header">
-          <span>Architectural Guidelines and Controls</span>
-          <span id="findings-count" style="color: #ef4444;">4 Active Vulnerabilities</span>
-        </div>
-        <div class="findings-list" id="findings-list">
-        </div>
-      </div>
-    </section>
-
-    <section class="blueprints-section">
-      <h2 class="section-title">Mitigation Blueprints &amp; Server Configurations</h2>
-      <p class="section-subtitle">Select configuration file to view and copy hardened production-ready manifests:</p>
-
-      <div class="code-toolbar">
-        <select class="code-select" id="code-select" onchange="switchCodeTab(this.value)">
-          <option value="sysctl">sysctl-hardening.conf (Kernel Linux)</option>
-          <option value="nginx">nginx-http2-hardened.conf (NGINX)</option>
-          <option value="nftables">nftables-dos-protection.conf (Firewall L4)</option>
-          <option value="docker">docker-compose-hardened.yml (Containers)</option>
-          <option value="cli">http2_kernel_dos_checker.py (CLI)</option>
-        </select>
-        <button class="btn-copy" id="btn-copy-code" onclick="copyCode()" type="button">Copy</button>
-      </div>
-
-      <pre class="code-viewer-box" id="code-box"></pre>
-    </section>
-
-    <section class="aeo-section">
-      <span class="aeo-overline">DEFENSIVE SECURITY SPECIFICATION FOR HTTP/2 INFRASTRUCTURE</span>
-      <h2 class="aeo-title">How to Protect Corporate Servers against HTTP/2 and Network-Layer DoS Attacks?</h2>
-      <div class="aeo-content">
-        <p>The HTTP/2 protocol introduced bidirectional stream multiplexing over a single TCP connection, unlocking substantial performance improvements for modern web applications. However, structural attack vectors such as Rapid Reset (CVE-2023-44487) and NoisyTCP exhaustion exploit this multiplexing by generating thousands of concurrent streams and cancelling them instantaneously via RST_STREAM frames, overwhelming web server CPU and proxy buffers.</p>
-        <p>The defence-in-depth architecture mandated by TAVARDT pairs Layer 7 application mitigation (enforcing strict concurrent stream quotas and RST frame limits in NGINX or reverse proxies), fine-tuning Linux kernel TCP buffers and backlog queues (/etc/sysctl.d), and preemptive Layer 4 packet filtering via nftables firewall rules.</p>
-      </div>
-    </section>
-
-    <section class="faq-section">
-      <h2 class="faq-title">Frequently Asked Questions on HTTP/2 DoS Mitigation &amp; Linux Kernel Hardening</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>Why active HTTP/2 stress audits and kernel exhaustion testing should not be executed via browser?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-body">
+<div class="cli-features">
+<div class="cli-feature-tag"><strong>Deterministic Inspection</strong>Direct /proc/sys read and RFC baselines</div>
+<div class="cli-feature-tag"><strong>Zero Trust Protection</strong>Zero telemetry or external network calls</div>
+<div class="cli-feature-tag"><strong>Zero Simulation</strong>Production-tested system directives</div>
+</div>
+</div>
+</div>
+<section class="matrix-section">
+<h2 class="section-title">Architectural Diagnostics: Standard Server vs. Hardened Infrastructure</h2>
+<p class="section-subtitle">Select an architectural posture to inspect resource exhaustion vectors or mitigation controls:</p>
+<div class="matrix-tabs">
+<button class="matrix-tab-btn active vuln" id="tab-scenario-vuln" onclick="switchScenario('vuln')" type="button">1. Standard Server (Vulnerable)</button>
+<button class="matrix-tab-btn hard" id="tab-scenario-hard" onclick="switchScenario('hard')" type="button">2. Hardened Server (TAVARDT Zero Trust Baseline)</button>
+</div>
+<div class="posture-display-card">
+<div class="posture-status-row">
+<span class="posture-badge badge-vuln" id="posture-badge">STANDARD POSTURE: VULNERABLE TO RAPID RESET &amp; RESOURCE EXHAUSTION</span>
+<span class="posture-mode-tag" id="posture-mode-tag">Default Linux Kernel &amp; Reverse Proxy Configuration</span>
+</div>
+<p class="posture-summary" id="posture-summary">Default web server and Linux kernel configurations accept hundreds of concurrent streams without RST frame rate limits, maintain shallow TCP backlogs, and lack SYN cookies, quickly succumbing to HTTP/2 Rapid Reset and NoisyTCP exhaustion.</p>
+<div class="routes-box">
+<div class="routes-header">
+<span>HTTP/2 &amp; TCP Exhaustion Vectors Mapping</span>
+</div>
+<table class="routes-table">
+<thead>
+<tr>
+<th>ATTACK VECTOR / SURFACE</th>
+<th>OBSERVED CONFIGURATION</th>
+<th>COMPORTAMENTO DO PIPELINE</th>
+<th>SECURITY POSTURE</th>
+</tr>
+</thead>
+<tbody id="routes-tbody">
+</tbody>
+</table>
+</div>
+<div class="findings-header">
+<span>Architectural Guidelines and Controls</span>
+<span id="findings-count" style="color: #ef4444;">4 Active Vulnerabilities</span>
+</div>
+<div class="findings-list" id="findings-list">
+</div>
+</div>
+</section>
+<section class="blueprints-section">
+<h2 class="section-title">Mitigation Blueprints &amp; Server Configurations</h2>
+<p class="section-subtitle">Select configuration file to view and copy hardened production-ready manifests:</p>
+<div class="code-toolbar">
+<select class="code-select" id="code-select" onchange="switchCodeTab(this.value)">
+<option value="sysctl">sysctl-hardening.conf (Kernel Linux)</option>
+<option value="nginx">nginx-http2-hardened.conf (NGINX)</option>
+<option value="nftables">nftables-dos-protection.conf (Firewall L4)</option>
+<option value="docker">docker-compose-hardened.yml (Containers)</option>
+<option value="cli">http2_kernel_dos_checker.py (CLI)</option>
+</select>
+<button class="btn-copy" id="btn-copy-code" onclick="copyCode()" type="button">Copy</button>
+</div>
+<pre class="code-viewer-box" id="code-box"></pre>
+</section>
+<section class="aeo-section">
+<span class="aeo-overline">DEFENSIVE SECURITY SPECIFICATION FOR HTTP/2 INFRASTRUCTURE</span>
+<h2 class="aeo-title">How to Protect Corporate Servers against HTTP/2 and Network-Layer DoS Attacks?</h2>
+<div class="aeo-content">
+<p>The HTTP/2 protocol introduced bidirectional stream multiplexing over a single TCP connection, unlocking substantial performance improvements for modern web applications. However, structural attack vectors such as Rapid Reset (CVE-2023-44487) and NoisyTCP exhaustion exploit this multiplexing by generating thousands of concurrent streams and cancelling them instantaneously via RST_STREAM frames, overwhelming web server CPU and proxy buffers.</p>
+<p>The defence-in-depth architecture mandated by TAVARDT pairs Layer 7 application mitigation (enforcing strict concurrent stream quotas and RST frame limits in NGINX or reverse proxies), fine-tuning Linux kernel TCP buffers and backlog queues (/etc/sysctl.d), and preemptive Layer 4 packet filtering via nftables firewall rules.</p>
+</div>
+</section>
+<section class="faq-section">
+<h2 class="faq-title">Frequently Asked Questions on HTTP/2 DoS Mitigation &amp; Linux Kernel Hardening</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-btn" onclick="toggleFaq(this)" type="button">
+<span>Why active HTTP/2 stress audits and kernel exhaustion testing should not be executed via browser?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-body">
             Auditing TCP stack and kernel resource exhaustion requires raw sockets and direct inspection of the host /proc/sys filesystem, capabilities unavailable within restricted browser sandboxes. For this reason, TAVARDT provides validated production blueprints and a deterministic Python CLI script for local host execution.
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>How does the HTTP/2 Rapid Reset attack (CVE-2023-44487) affect web servers?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-body">
+</div>
+<div class="faq-item">
+<button class="faq-btn" onclick="toggleFaq(this)" type="button">
+<span>How does the HTTP/2 Rapid Reset attack (CVE-2023-44487) affect web servers?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-body">
             The attack exploits HTTP/2 stream multiplexing by dispatching rapid sequences of HEADERS requests immediately followed by RST_STREAM frames. The web server allocates worker threads and memory before processing cancellation, causing severe CPU exhaustion without breaching concurrency limits.
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>Which Linux kernel sysctl parameters are critical for mitigating TCP saturation?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-body">
+</div>
+<div class="faq-item">
+<button class="faq-btn" onclick="toggleFaq(this)" type="button">
+<span>Which Linux kernel sysctl parameters are critical for mitigating TCP saturation?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-body">
             Key parameters include net.ipv4.tcp_syncookies = 1 (SYN flood mitigation), net.ipv4.tcp_max_syn_backlog = 8192 (expanded half-open connection queue), net.ipv4.tcp_fin_timeout = 15 (rapid orphan socket release), and net.ipv4.tcp_tw_reuse = 1 (safe socket recycling in TIME_WAIT).
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>What is the distinction between application layer (L7) and network layer (L4) DoS mitigation?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-body">
+</div>
+<div class="faq-item">
+<button class="faq-btn" onclick="toggleFaq(this)" type="button">
+<span>What is the distinction between application layer (L7) and network layer (L4) DoS mitigation?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-body">
             Layer 4 (nftables firewall) filters abusive SYN packets and connection spikes in the kernel before reaching user space, consuming minimal CPU. Layer 7 (NGINX/reverse proxy) enforces HTTP/2 concurrency caps and RST_STREAM rate limits. An enterprise defense posture requires coordinated operation across both layers.
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>How to deploy mitigation directives without impacting legitimate user traffic?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-body">
+</div>
+<div class="faq-item">
+<button class="faq-btn" onclick="toggleFaq(this)" type="button">
+<span>How to deploy mitigation directives without impacting legitimate user traffic?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-body">
             Directives should be deployed via staging or canary environments while tracking latency and packet drop counters with nstat and dmesg. Reverse proxy rules must maintain sufficient buffer (e.g. 64 to 128 concurrent streams) to sustain high-performance legitimate client transactions.
           </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="cta-card">
-      <h3>Need Infrastructure Hardening Against HTTP/2 DoS Attacks &amp; Kernel Saturation?</h3>
-      <p>The TAVARDT engineering and cybersecurity team performs in-depth audits on enterprise infrastructure, deploys high-performance nftables rulesets, optimizes Linux kernel network buffers, and configures resilient reverse proxies within 24 hours.</p>
-      <div class="cta-btns">
-        <a class="btn-wa" href="https://wa.me/5584987721775?text=Hello%20Sofia%2C%20I%20reviewed%20the%20HTTP/2%20Kernel%20Hardening%20Hub%20at%20TAVARDT%20Australia%20and%20would%20like%20technical%20support%20to%20secure%20my%20servers." rel="noopener" target="_blank">Direct Support with Sofia (WhatsApp)</a>
-        <a class="btn-corp" href="https://ag.tavardt.com/au/cybersecurity/" rel="noopener" target="_blank">Explore Cybersecurity Services</a>
-      </div>
-    </div>
-  </main>
-
-  <footer class="tavardt-footer">
-    <div class="tavardt-footer-inner">
-      <div class="tavardt-footer-col">
-        <div class="tavardt-footer-logo">TAVARDT<span class="tavardt-brand-dot">.</span></div>
-        <p class="tavardt-footer-mission">Transforming invisible operations into authoritative, resilient, and enterprise-grade secured platforms.</p>
-      </div>
-      <div class="tavardt-footer-col">
-        <div class="tavardt-footer-heading">Regional Navigation</div>
-        <ul class="tavardt-footer-links">
-          <li><a href="https://ag.tavardt.com/au/" rel="noopener" target="_blank">Portal</a></li>
-          <li><a href="https://tools.tavardt.com/au/" rel="noopener" target="_blank">Tools</a></li>
-          <li><a href="https://ag.tavardt.com/au/contact/" rel="noopener" target="_blank">Contact</a></li>
-        </ul>
-      </div>
-      <div class="tavardt-footer-col">
-        <div class="tavardt-footer-heading">Governance &amp; Compliance</div>
-        <p class="tavardt-footer-compliance-text">Defensive architecture and cybersecurity controls aligned with ACSC Essential Eight, ASD ISM, and Australian Privacy Principles (APPs).</p>
-      </div>
-    </div>
-    <div class="tavardt-footer-bottom">
-      <p>&copy; 2026 TAVARDT. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
+</div>
+</div>
+</section>
+<div class="cta-card">
+<h3>Need Infrastructure Hardening Against HTTP/2 DoS Attacks &amp; Kernel Saturation?</h3>
+<p>The TAVARDT engineering and cybersecurity team performs in-depth audits on enterprise infrastructure, deploys high-performance nftables rulesets, optimizes Linux kernel network buffers, and configures resilient reverse proxies within 24 hours.</p>
+<div class="cta-btns">
+<a class="btn-wa" href="https://wa.me/5584987721775?text=Hello%20Sofia%2C%20I%20reviewed%20the%20HTTP/2%20Kernel%20Hardening%20Hub%20at%20TAVARDT%20Australia%20and%20would%20like%20technical%20support%20to%20secure%20my%20servers." rel="noopener" target="_blank">Direct Support with Sofia (WhatsApp)</a>
+<a class="btn-corp" href="https://ag.tavardt.com/au/cybersecurity/" rel="noopener" target="_blank">Explore Cybersecurity Services</a>
+</div>
+</div>
+</main>
+<footer class="tavardt-footer">
+<div class="tavardt-footer-inner">
+<div class="tavardt-footer-col">
+<div class="tavardt-footer-logo">TAVARDT</div>
+<p class="tavardt-footer-mission">Transforming invisible operations into authoritative, resilient, and enterprise-grade secured platforms.</p>
+</div>
+<div class="tavardt-footer-col">
+<div class="tavardt-footer-heading">Regional Navigation</div>
+<ul class="tavardt-footer-links">
+<li><a href="https://ag.tavardt.com/au/" rel="noopener" target="_blank">Portal</a></li>
+<li><a href="https://tools.tavardt.com/au/" rel="noopener" target="_blank">Tools</a></li>
+<li><a href="https://ag.tavardt.com/au/contact/" rel="noopener" target="_blank">Contact</a></li>
+</ul>
+</div>
+<div class="tavardt-footer-col">
+<div class="tavardt-footer-heading">Governance &amp; Compliance</div>
+<p class="tavardt-footer-compliance-text">Defensive architecture and cybersecurity controls aligned with ACSC Essential Eight, ASD ISM, and Australian Privacy Principles (APPs).</p>
+</div>
+</div>
+<div class="tavardt-footer-bottom">
+<p>© 2026 TAVARDT. All rights reserved.</p>
+</div>
+</footer>
+<script>
     let currentScenario = 'vuln';
     let activeTab = 'sysctl';
 
