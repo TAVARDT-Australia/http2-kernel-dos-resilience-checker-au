@@ -10,7 +10,7 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KDF4PP5Q');</script>
+  })(window,document,'script','dataLayer','GTM-5KNBXRZP');</script>
   
 
   <meta charset="UTF-8">
@@ -53,7 +53,7 @@
         "applicationCategory": "SecurityApplication",
         "operatingSystem": "Linux, All",
         "browserRequirements": "Requires JavaScript. Requires HTML5.",
-        "description": "Central corporativa de especificações de arquitetura defensiva, blueprints de mitigação de Rapid Reset (CVE-2023-44487), hardening de kernel Linux (sysctl) e script CLI determinístico de auditoria.",
+        "description": "Corporate defensive architecture hub, mitigation blueprints for Rapid Reset (CVE-2023-44487), Linux kernel hardening (sysctl), and deterministic CLI audit utility.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -82,7 +82,7 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Central de Ferramentas",
+            "name": "Tools Hub",
             "item": "https://tools.tavardt.com/au/"
           },
           {
@@ -96,8 +96,8 @@
       {
         "@type": "TechArticle",
         "@id": "https://tavardt-australia.github.io/http2-kernel-dos-resilience-checker-au/#article",
-        "headline": "Especificação Técnica de Mitigação de DoS em HTTP/2 e Hardening de Kernel Linux",
-        "description": "Análise arquitetural de vetores de exaustão em HTTP/2 (Rapid Reset e NoisyTCP) e parâmetros de mitigação para servidores corporativos.",
+        "headline": "Technical Mitigation Specification for HTTP/2 DoS &amp; Linux Kernel Hardening",
+        "description": "Architectural analysis of HTTP/2 exhaustion vectors (Rapid Reset and NoisyTCP) and mitigation directives for enterprise servers.",
         "articleSection": "Hardening HTTP/2 & Kernel",
         "inLanguage": "en-AU",
         "publisher": {
@@ -112,42 +112,42 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Por que auditorias ativas de sobrecarga HTTP/2 e queda de kernel não devem ser executadas pelo navegador?",
+            "name": "Why active HTTP/2 stress audits and kernel exhaustion testing should not be executed via browser?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Auditorias de exaustão de pilha TCP e kernel exigem sockets brutos (raw sockets) e inspeção do sistema de arquivos /proc/sys do host, capacidades indisponíveis na sandbox restrita do navegador web. Por isso, a TAVARDT disponibiliza blueprints validados de configuração e um script CLI determinístico em Python para execução local no servidor."
+              "text": "Auditing TCP stack and kernel resource exhaustion requires raw sockets and direct inspection of the host /proc/sys filesystem, capabilities unavailable within restricted browser sandboxes. For this reason, TAVARDT provides validated production blueprints and a deterministic Python CLI script for local host execution."
             }
           },
           {
             "@type": "Question",
-            "name": "Como o ataque HTTP/2 Rapid Reset (CVE-2023-44487) atua sobre servidores web?",
+            "name": "How does the HTTP/2 Rapid Reset attack (CVE-2023-44487) affect web servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "O ataque explora o mecanismo de multiplexação do protocolo HTTP/2 enviando sucessivas requisições HEADERS imediatamente seguidas de quadros RST_STREAM. O servidor web aloca recursos para processar cada requisição antes de descartá-la, gerando sobrecarga massiva de CPU e memória sem que o limite de conexões concorrentes seja atingido."
+              "text": "The attack exploits HTTP/2 stream multiplexing by dispatching rapid sequences of HEADERS requests immediately followed by RST_STREAM frames. The web server allocates worker threads and memory before processing cancellation, causing severe CPU exhaustion without breaching concurrency limits."
             }
           },
           {
             "@type": "Question",
-            "name": "Quais parâmetros do kernel Linux (sysctl) são fundamentais para mitigação de saturação TCP?",
+            "name": "Which Linux kernel sysctl parameters are critical for mitigating TCP saturation?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Destacam-se net.ipv4.tcp_syncookies = 1 (proteção contra SYN flood), net.ipv4.tcp_max_syn_backlog = 8192 (fila de conexões pendentes), net.ipv4.tcp_fin_timeout = 15 (liberação rápida de sockets órfãos) e net.ipv4.tcp_tw_reuse = 1 (reaproveitamento seguro de sockets em TIME_WAIT)."
+              "text": "Key parameters include net.ipv4.tcp_syncookies = 1 (SYN flood mitigation), net.ipv4.tcp_max_syn_backlog = 8192 (expanded half-open connection queue), net.ipv4.tcp_fin_timeout = 15 (rapid orphan socket release), and net.ipv4.tcp_tw_reuse = 1 (safe socket recycling in TIME_WAIT)."
             }
           },
           {
             "@type": "Question",
-            "name": "Qual a diferença entre mitigar ataques DoS na camada de aplicação (L7) versus camada de rede (L4)?",
+            "name": "What is the distinction between application layer (L7) and network layer (L4) DoS mitigation?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A camada L4 (firewall nftables) filtra pacotes SYN abusivos e conexões anômalas antes que cheguem ao espaço do usuário, consumindo mínima CPU. A camada L7 (NGINX/proxy) inspeciona fluxos HTTP/2, limitando requisições e RST_STREAMs. Uma arquitetura defensiva robusta exige a atuação coordenada de ambas as camadas."
+              "text": "Layer 4 (nftables firewall) filters abusive SYN packets and connection spikes in the kernel before reaching user space, consuming minimal CPU. Layer 7 (NGINX/reverse proxy) enforces HTTP/2 concurrency caps and RST_STREAM rate limits. An enterprise defense posture requires coordinated operation across both layers."
             }
           },
           {
             "@type": "Question",
-            "name": "Como implementar as diretivas de mitigação sem interromper o tráfego legítimo de usuários?",
+            "name": "How to deploy mitigation directives without impacting legitimate user traffic?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Recomenda-se aplicar os parâmetros em ambiente de staging ou através de deploy canário, monitorando métricas de latência e contadores de descarte com nstat e dmesg. As diretivas NGINX devem manter margem suficiente (ex.: 64 a 128 streams concorrentes) para atender clientes legítimos com alta performance."
+              "text": "Directives should be deployed via staging or canary environments while tracking latency and packet drop counters with nstat and dmesg. Reverse proxy rules must maintain sufficient buffer (e.g. 64 to 128 concurrent streams) to sustain high-performance legitimate client transactions."
             }
           }
         ]
@@ -1002,7 +1002,7 @@
   </style>
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDF4PP5Q"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KNBXRZP"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="tavardt-header">
@@ -1020,13 +1020,13 @@
   <main class="tavardt-main">
     <section class="hero-section">
       <h1 class="hero-title">HTTP/2 &amp; Linux Kernel DoS Resilience Hardening Hub</h1>
-      <p class="hero-subtitle">Especificação técnica corporativa de mitigação contra Rapid Reset (CVE-2023-44487), controle de saturação NoisyTCP, diretivas de kernel Linux (sysctl), configuração de NGINX e ferramental CLI determinístico.</p>
+      <p class="hero-subtitle">Enterprise defensive specification for Rapid Reset (CVE-2023-44487) mitigation, NoisyTCP saturation controls, Linux kernel sysctl directives, hardened NGINX reverse proxy configs, and deterministic CLI tooling.</p>
     </section>
 
     <div class="cli-card">
       <div class="cli-header">
         <span class="cli-title">Local CLI Terminal Testing</span>
-        <button class="btn-copy-cli" id="btn-copy-cli" onclick="copyCliCommand()" type="button" aria-label="Copiar comando">
+        <button class="btn-copy-cli" id="btn-copy-cli" onclick="copyCliCommand()" type="button" aria-label="Copy Command">
           <span class="btn-copy-cli-text">Copy</span>
           <span class="btn-copy-cli-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></span>
         </button>
@@ -1036,31 +1036,31 @@
         <div class="cli-code-terminal" id="cli-terminal-code"><span class="cli-comment"># 1. Download audit script from official repository</span>
 curl -sO https://raw.githubusercontent.com/TAVARDT-Australia/http2-kernel-dos-resilience-checker-au/main/http2_kernel_dos_checker.py
 
-<span class="cli-comment"># 2. Executar auditoria determinística de parâmetros de rede no servidor</span>
+<span class="cli-comment"># 2. Execute deterministic network parameter audit on host</span>
 python http2_kernel_dos_checker.py</div>
         <div class="cli-features">
-          <div class="cli-feature-tag"><strong>Inspeção Determinística</strong>Leitura direta de /proc/sys e RFCs</div>
-          <div class="cli-feature-tag"><strong>Proteção Zero Trust</strong>Sem telemetria ou tráfego externo</div>
-          <div class="cli-feature-tag"><strong>Zero Simulação</strong>Diretivas testadas em produção</div>
+          <div class="cli-feature-tag"><strong>Deterministic Inspection</strong>Direct /proc/sys read and RFC baselines</div>
+          <div class="cli-feature-tag"><strong>Zero Trust Protection</strong>Zero telemetry or external network calls</div>
+          <div class="cli-feature-tag"><strong>Zero Simulation</strong>Production-tested system directives</div>
         </div>
       </div>
     </div>
 
     <section class="matrix-section">
       <h2 class="section-title">Architectural Diagnostics: Standard Server vs. Hardened Infrastructure</h2>
-      <p class="section-subtitle">Selecione uma das posturas arquiteturais para inspecionar os vetores de exaustão de recursos ou os controles de mitigação:</p>
+      <p class="section-subtitle">Select an architectural posture to inspect resource exhaustion vectors or mitigation controls:</p>
 
       <div class="matrix-tabs">
-        <button class="matrix-tab-btn active vuln" id="tab-scenario-vuln" onclick="switchScenario('vuln')" type="button">1. Servidor Padrão (Vulnerável)</button>
-        <button class="matrix-tab-btn hard" id="tab-scenario-hard" onclick="switchScenario('hard')" type="button">2. Servidor Blindado (Padrão TAVARDT Zero Trust)</button>
+        <button class="matrix-tab-btn active vuln" id="tab-scenario-vuln" onclick="switchScenario('vuln')" type="button">1. Standard Server (Vulnerable)</button>
+        <button class="matrix-tab-btn hard" id="tab-scenario-hard" onclick="switchScenario('hard')" type="button">2. Hardened Server (TAVARDT Zero Trust Baseline)</button>
       </div>
 
       <div class="posture-display-card">
         <div class="posture-status-row">
-          <span class="posture-badge badge-vuln" id="posture-badge">POSTURA PADRÃO: VULNERÁVEL A RCE &amp; ROUBO DE SEGREDO CORPORATIVO</span>
-          <span class="posture-mode-tag" id="posture-mode-tag">Configuração Insegura Com Permissões Globais Excessivas</span>
+          <span class="posture-badge badge-vuln" id="posture-badge">STANDARD POSTURE: VULNERABLE TO RAPID RESET &amp; RESOURCE EXHAUSTION</span>
+          <span class="posture-mode-tag" id="posture-mode-tag">Default Linux Kernel &amp; Reverse Proxy Configuration</span>
         </div>
-        <p class="posture-summary" id="posture-summary">Pipelines convencionais frequentemente utilizam permissões globais irrestritas (write-all), disparam jobs privilegiados através de pull_request_target com checkout de código externo e consomem actions de terceiros sem fixação estrita por commit SHA, viabilizando ataques diretos de Supply Chain.</p>
+        <p class="posture-summary" id="posture-summary">Default web server and Linux kernel configurations accept hundreds of concurrent streams without RST frame rate limits, maintain shallow TCP backlogs, and lack SYN cookies, quickly succumbing to HTTP/2 Rapid Reset and NoisyTCP exhaustion.</p>
 
         <div class="routes-box">
           <div class="routes-header">
@@ -1072,7 +1072,7 @@ python http2_kernel_dos_checker.py</div>
                 <th>ATTACK VECTOR / SURFACE</th>
                 <th>OBSERVED CONFIGURATION</th>
                 <th>COMPORTAMENTO DO PIPELINE</th>
-                <th>POSTURA DE SEGURANÇA</th>
+                <th>SECURITY POSTURE</th>
               </tr>
             </thead>
             <tbody id="routes-tbody">
@@ -1111,68 +1111,68 @@ python http2_kernel_dos_checker.py</div>
       <span class="aeo-overline">DEFENSIVE SECURITY SPECIFICATION FOR HTTP/2 INFRASTRUCTURE</span>
       <h2 class="aeo-title">How to Protect Corporate Servers against HTTP/2 and Network-Layer DoS Attacks?</h2>
       <div class="aeo-content">
-        <p>O protocolo HTTP/2 introduziu a multiplexação de fluxos bidirecionais sobre uma única conexão TCP, permitindo alto ganho de desempenho para aplicações modernas. No entanto, falhas estruturais como o ataque Rapid Reset (CVE-2023-44487) e a exaustão por NoisyTCP exploram essa multiplexação ao abrir milhares de streams simultâneos e cancelá-los instantaneamente com quadros RST_STREAM, saturando o processamento de proxies e servidores web.</p>
-        <p>A defesa em profundidade recomendada pela TAVARDT combina mitigação na camada de aplicação L7 (impondo cotas rigorosas de streams concorrentes e limites de reset no NGINX ou proxy reverso), ajuste fino dos buffers TCP e filas de backlog no kernel Linux (/etc/sysctl.d) e descarte preemptivo de rajadas de pacotes anômalos na camada L4 com regras de firewall nftables.</p>
+        <p>The HTTP/2 protocol introduced bidirectional stream multiplexing over a single TCP connection, unlocking substantial performance improvements for modern web applications. However, structural attack vectors such as Rapid Reset (CVE-2023-44487) and NoisyTCP exhaustion exploit this multiplexing by generating thousands of concurrent streams and cancelling them instantaneously via RST_STREAM frames, overwhelming web server CPU and proxy buffers.</p>
+        <p>The defence-in-depth architecture mandated by TAVARDT pairs Layer 7 application mitigation (enforcing strict concurrent stream quotas and RST frame limits in NGINX or reverse proxies), fine-tuning Linux kernel TCP buffers and backlog queues (/etc/sysctl.d), and preemptive Layer 4 packet filtering via nftables firewall rules.</p>
       </div>
     </section>
 
     <section class="faq-section">
-      <h2 class="faq-title">Perguntas Frequentes sobre Mitigação de DoS em HTTP/2 e Kernel Linux</h2>
+      <h2 class="faq-title">Frequently Asked Questions on HTTP/2 DoS Mitigation &amp; Linux Kernel Hardening</h2>
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>Por que auditorias ativas de sobrecarga HTTP/2 e queda de kernel não devem ser executadas pelo navegador?</span>
+            <span>Why active HTTP/2 stress audits and kernel exhaustion testing should not be executed via browser?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body">
-            Auditorias de exaustão de pilha TCP e kernel exigem sockets brutos (raw sockets) e inspeção do sistema de arquivos /proc/sys do host, capacidades indisponíveis na sandbox restrita do navegador web. Por isso, a TAVARDT disponibiliza blueprints validados de configuração e um script CLI determinístico em Python para execução local no servidor.
+            Auditing TCP stack and kernel resource exhaustion requires raw sockets and direct inspection of the host /proc/sys filesystem, capabilities unavailable within restricted browser sandboxes. For this reason, TAVARDT provides validated production blueprints and a deterministic Python CLI script for local host execution.
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>Como o ataque HTTP/2 Rapid Reset (CVE-2023-44487) atua sobre servidores web?</span>
+            <span>How does the HTTP/2 Rapid Reset attack (CVE-2023-44487) affect web servers?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body">
-            O ataque explora o mecanismo de multiplexação do protocolo HTTP/2 enviando sucessivas requisições HEADERS imediatamente seguidas de quadros RST_STREAM. O servidor web aloca recursos para processar cada requisição antes de descartá-la, gerando sobrecarga massiva de CPU e memória sem que o limite de conexões concorrentes seja atingido.
+            The attack exploits HTTP/2 stream multiplexing by dispatching rapid sequences of HEADERS requests immediately followed by RST_STREAM frames. The web server allocates worker threads and memory before processing cancellation, causing severe CPU exhaustion without breaching concurrency limits.
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>Quais parâmetros do kernel Linux (sysctl) são fundamentais para mitigação de saturação TCP?</span>
+            <span>Which Linux kernel sysctl parameters are critical for mitigating TCP saturation?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body">
-            Destacam-se net.ipv4.tcp_syncookies = 1 (proteção contra SYN flood), net.ipv4.tcp_max_syn_backlog = 8192 (fila de conexões pendentes), net.ipv4.tcp_fin_timeout = 15 (liberação rápida de sockets órfãos) e net.ipv4.tcp_tw_reuse = 1 (reaproveitamento seguro de sockets em TIME_WAIT).
+            Key parameters include net.ipv4.tcp_syncookies = 1 (SYN flood mitigation), net.ipv4.tcp_max_syn_backlog = 8192 (expanded half-open connection queue), net.ipv4.tcp_fin_timeout = 15 (rapid orphan socket release), and net.ipv4.tcp_tw_reuse = 1 (safe socket recycling in TIME_WAIT).
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>Qual a diferença entre mitigar ataques DoS na camada de aplicação (L7) versus camada de rede (L4)?</span>
+            <span>What is the distinction between application layer (L7) and network layer (L4) DoS mitigation?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body">
-            A camada L4 (firewall nftables) filtra pacotes SYN abusivos e conexões anômalas antes que cheguem ao espaço do usuário, consumindo mínima CPU. A camada L7 (NGINX/proxy) inspeciona fluxos HTTP/2, limitando requisições e RST_STREAMs. Uma arquitetura defensiva robusta exige a atuação coordenada de ambas as camadas.
+            Layer 4 (nftables firewall) filters abusive SYN packets and connection spikes in the kernel before reaching user space, consuming minimal CPU. Layer 7 (NGINX/reverse proxy) enforces HTTP/2 concurrency caps and RST_STREAM rate limits. An enterprise defense posture requires coordinated operation across both layers.
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-btn" onclick="toggleFaq(this)" type="button">
-            <span>Como implementar as diretivas de mitigação sem interromper o tráfego legítimo de usuários?</span>
+            <span>How to deploy mitigation directives without impacting legitimate user traffic?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-body">
-            Recomenda-se aplicar os parâmetros em ambiente de staging ou através de deploy canário, monitorando métricas de latência e contadores de descarte com nstat e dmesg. As diretivas NGINX devem manter margem suficiente (ex.: 64 a 128 streams concorrentes) para atender clientes legítimos com alta performance.
+            Directives should be deployed via staging or canary environments while tracking latency and packet drop counters with nstat and dmesg. Reverse proxy rules must maintain sufficient buffer (e.g. 64 to 128 concurrent streams) to sustain high-performance legitimate client transactions.
           </div>
         </div>
       </div>
     </section>
 
     <div class="cta-card">
-      <h3>Precisa de Blindagem de Infraestrutura contra Ataques DoS em HTTP/2 e Kernel?</h3>
-      <p>A equipe de engenharia e cibersegurança da TAVARDT realiza auditorias aprofundadas em servidores corporativos, implementa filtros nftables de alto desempenho, ajusta parâmetros de kernel Linux e configura reverse proxies blindados em até 24 horas.</p>
+      <h3>Need Infrastructure Hardening Against HTTP/2 DoS Attacks &amp; Kernel Saturation?</h3>
+      <p>The TAVARDT engineering and cybersecurity team performs in-depth audits on enterprise infrastructure, deploys high-performance nftables rulesets, optimizes Linux kernel network buffers, and configures resilient reverse proxies within 24 hours.</p>
       <div class="cta-btns">
-        <a class="btn-wa" href="https://wa.me/5584987721775?text=Ol%C3%A1%20Sofia%2C%20consultei%20o%20HTTP/2%20Kernel%20Hardening%20Hub%20da%20TAVARDT%20e%20gostaria%20de%20apoio%20t%C3%A9cnico%20para%20blindagem%20dos%20meus%20servidores." rel="noopener" target="_blank">Atendimento Direto com a Sofia (WhatsApp)</a>
-        <a class="btn-corp" href="https://ag.tavardt.com/au/ciberseguranca/" rel="noopener" target="_blank">Ver Serviços de Cibersegurança</a>
+        <a class="btn-wa" href="https://wa.me/5584987721775?text=Hello%20Sofia%2C%20I%20reviewed%20the%20HTTP/2%20Kernel%20Hardening%20Hub%20at%20TAVARDT%20Australia%20and%20would%20like%20technical%20support%20to%20secure%20my%20servers." rel="noopener" target="_blank">Direct Support with Sofia (WhatsApp)</a>
+        <a class="btn-corp" href="https://ag.tavardt.com/au/cybersecurity/" rel="noopener" target="_blank">Explore Cybersecurity Services</a>
       </div>
     </div>
   </main>
@@ -1181,10 +1181,10 @@ python http2_kernel_dos_checker.py</div>
     <div class="tavardt-footer-inner">
       <div class="tavardt-footer-col">
         <div class="tavardt-footer-logo">TAVARDT<span class="tavardt-brand-dot">.</span></div>
-        <p class="tavardt-footer-mission">Transformamos negócios invisíveis em marcas reconhecidas e seguras no mercado digital.</p>
+        <p class="tavardt-footer-mission">Transforming invisible operations into authoritative, resilient, and enterprise-grade secured platforms.</p>
       </div>
       <div class="tavardt-footer-col">
-        <div class="tavardt-footer-heading">Navegação Regional</div>
+        <div class="tavardt-footer-heading">Regional Navigation</div>
         <ul class="tavardt-footer-links">
           <li><a href="https://ag.tavardt.com/au/" rel="noopener" target="_blank">Portal</a></li>
           <li><a href="https://tools.tavardt.com/au/" rel="noopener" target="_blank">Tools</a></li>
@@ -1192,8 +1192,8 @@ python http2_kernel_dos_checker.py</div>
         </ul>
       </div>
       <div class="tavardt-footer-col">
-        <div class="tavardt-footer-heading">Governança &amp; Conformidade</div>
-        <p class="tavardt-footer-compliance-text">Arquitetura defensiva e controles de cibersegurança em conformidade com as diretrizes CIS Benchmarks, OWASP Top 10 e padrões Zero Trust.</p>
+        <div class="tavardt-footer-heading">Governance &amp; Compliance</div>
+        <p class="tavardt-footer-compliance-text">Defensive architecture and cybersecurity controls aligned with ACSC Essential Eight, ASD ISM, and Australian Privacy Principles (APPs).</p>
       </div>
     </div>
     <div class="tavardt-footer-bottom">
@@ -1329,7 +1329,7 @@ services:
     cap_add:
       - NET_BIND_SERVICE`,
 
-      cli: `# http2_kernel_dos_checker.py - TAVARDT Utilitario CLI Deterministico de Auditoria Local
+      cli: `# http2_kernel_dos_checker.py - TAVARDT Deterministic Local Audit CLI Utility
 import os
 import sys
 
@@ -1339,7 +1339,7 @@ def check_sysctl_param(param_path, expected_min):
     try:
         with open(param_path, "r") as f:
             val = int(f.read().strip())
-        status = "CONFORME" if val >= expected_min else "VULNERAVEL"
+        status = "COMPLIANT" if val >= expected_min else "VULNERABLE"
         return val, status
     except Exception as e:
         return None, str(e)
@@ -1361,11 +1361,11 @@ def run_audit():
     
     for path, expected, label in checks:
         val, status = check_sysctl_param(path, expected)
-        if status == "CONFORME":
+        if status == "COMPLIANT":
             score += 1
             print(f"[OK] {label}: {val} (Esperado: >= {expected})")
         else:
-            print(f"[ALERTA] {label}: {val} (Esperado: >= {expected}) - {status}")
+            print(f"[ALERT] {label}: {val} (Expected: >= {expected}) - {status}")
             
     print("." * 60)
     pct = int((score / total) * 100)
@@ -1381,14 +1381,14 @@ if __name__ == "__main__":
         badgeClass: 'badge-vuln',
         badgeText: 'DEFAULT POSTURE: VULNERABLE TO RESOURCE EXHAUSTION & HTTP/2 DOS',
         modeTag: 'Default Parameters Without Stream Quotas & Unprotected TCP',
-        summary: 'Servidores com configurações padrão de kernel e web servers expostos aceitam centenas de streams simultâneos sem rate limiting de RST_STREAM, filas de backlog curtas e sem proteções SYN cookies, sucumbindo rapidamente a ataques de Rapid Reset e NoisyTCP.',
+        summary: 'Default server configurations accept hundreds of concurrent streams without RST_STREAM rate limits, maintain shallow backlog queues, and disable SYN cookies, quickly succumbing to Rapid Reset and NoisyTCP exhaustion.',
         findingsCount: '4 Active Vulnerabilities',
         findingsCountColor: '#ef4444',
         routes: [
-          { path: 'http2_max_concurrent_streams ilimitado / alto (128+)', status: 'No Quota', exposure: 'Exaustão imediata de buffers e threads de worker', risk: 'CRÍTICO', tagClass: 'crit' },
-          { path: 'RST_STREAM sem limitação de taxa (CVE-2023-44487)', status: 'Rapid Reset', exposure: 'Descarte contínuo consome CPU sem disparar timeout', risk: 'CRÍTICO', tagClass: 'crit' },
-          { path: 'net.ipv4.tcp_syncookies desativado ou backlog padrão', status: 'SYN Flood', exposure: 'Esgotamento da tabela de conexões em rajadas TCP', risk: 'ALTO', tagClass: 'high' },
-          { path: 'Ausência de filtragem L4 (nftables / firewall)', status: 'No L4 Defense', exposure: 'Tráfego malicioso atinge espaço de usuário sem filtro', risk: 'ALTO', tagClass: 'high' }
+          { path: 'http2_max_concurrent_streams unlimited / high (128+)', status: 'No Quota', exposure: 'Immediate buffer and worker thread exhaustion', risk: 'CRITICAL', tagClass: 'crit' },
+          { path: 'RST_STREAM without rate limiting (CVE-2023-44487)', status: 'Rapid Reset', exposure: 'Continuous cancellation exhausts CPU without triggering timeout', risk: 'CRITICAL', tagClass: 'crit' },
+          { path: 'net.ipv4.tcp_syncookies disabled or default backlog', status: 'SYN Flood', exposure: 'Connection table exhaustion under TCP bursts', risk: 'HIGH', tagClass: 'high' },
+          { path: 'Absence of Layer 4 packet filtering (nftables / firewall)', status: 'No L4 Defense', exposure: 'Malicious bursts reach user space unfiltered', risk: 'HIGH', tagClass: 'high' }
         ],
         findings: [
           { text: 'Default HTTP/2 directives on web server without strict per-connection concurrency control (unlimited streams).', type: 'warn' },
@@ -1401,14 +1401,14 @@ if __name__ == "__main__":
         badgeClass: 'badge-hard',
         badgeText: 'HARDENED POSTURE: TAVARDT ZERO TRUST & DEFENSE IN DEPTH',
         modeTag: 'Linux Kernel Hardening, Strict HTTP/2 Quotas & L4 Filtering',
-        summary: 'A infraestrutura blindada impõe quotas rigorosas de streams concorrentes, taxa de cancelamento RST_STREAM controlada no proxy reverso, parâmetros de kernel sysctl otimizados para descarte rápido e filtragem em nível de pacote com nftables.',
+        summary: 'Hardened infrastructure enforces strict concurrent stream quotas, rate-limited RST frame cancellation at the reverse proxy, sysctl parameters tuned for rapid socket reclamation, and kernel-level packet dropping via nftables.',
         findingsCount: '4 Implemented Controls (Fully Hardened)',
         findingsCountColor: '#10b981',
         routes: [
-          { path: 'http2_max_concurrent_streams 64 com limit_req', status: 'Isolado', exposure: 'Consumo previsível de memória por conexão TCP ativa', risk: 'BLINDADO', tagClass: 'safe' },
-          { path: 'Mitigação de Rapid Reset com descarte de abusos', status: 'Rate Limited', exposure: 'Conexões com excesso de resets são encerradas de imediato', risk: 'BLINDADO', tagClass: 'safe' },
-          { path: 'net.ipv4.tcp_syncookies = 1 e backlog ajustado', status: 'Otimizado', exposure: 'Resiliência contra ataques volumétricos na camada TCP', risk: 'CONFORME', tagClass: 'safe' },
-          { path: 'nftables com limite de conexões por IP de origem', status: 'Filtragem L4', exposure: 'Pacotes abusivos descartados antes de atingir o proxy', risk: 'BLINDADO', tagClass: 'safe' }
+          { path: 'http2_max_concurrent_streams 64 with limit_req', status: 'Isolated', exposure: 'Predictable memory consumption per active TCP connection', risk: 'HARDENED', tagClass: 'safe' },
+          { path: 'Rapid Reset mitigation with abusive connection termination', status: 'Rate Limited', exposure: 'Connections exceeding reset quotas terminated immediately', risk: 'HARDENED', tagClass: 'safe' },
+          { path: 'net.ipv4.tcp_syncookies = 1 and expanded backlog', status: 'Optimised', exposure: 'High resilience against volumetric TCP SYN floods', risk: 'COMPLIANT', tagClass: 'safe' },
+          { path: 'nftables rate limiting per source IP subnet', status: 'L4 Filtering', exposure: 'Abusive packets dropped before reaching user space proxy', risk: 'HARDENED', tagClass: 'safe' }
         ],
         findings: [
           { text: 'Reverse proxy configured with conservative multiplexed stream quotas (64 concurrent connections limit).', type: 'ok' },
@@ -1455,7 +1455,7 @@ if __name__ == "__main__":
       data.findings.forEach(f => {
         const item = document.createElement('div');
         item.className = 'finding-item ' + f.type;
-        item.innerText = (f.type === 'ok' ? '[CONFORME] ' : '[ALERTA CRÍTICO] ') + f.text;
+        item.innerText = (f.type === 'ok' ? '[COMPLIANT] ' : '[CRITICAL ALERT] ') + f.text;
         fList.appendChild(item);
       });
     }
